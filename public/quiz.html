@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awareness Quiz | Welfare India</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <i class="fas fa-landmark"></i> <span data-i18n="nav_logo">Welfare India</span>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+            <li><a href="schemes.html" data-i18n="nav_schemes">Schemes</a></li>
+            <li><a href="updates.html" data-i18n="nav_updates">Updates</a></li>
+            <li><a href="eligibility.html" data-i18n="nav_eligibility">Check Eligibility</a></li>
+            <li><a href="quiz.html" class="active" data-i18n="nav_quiz">Quiz</a></li>
+            <li><a href="contact.html" data-i18n="nav_feedback">Feedback</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2 class="section-title" data-i18n="quiz_title">Welfare Awareness Quiz</h2>
+        <p style="text-align: center; margin-bottom: 20px;" data-i18n="quiz_subtitle">Test your knowledge about government welfare schemes.</p>
+
+        <div class="quiz-container" id="quiz-box">
+            <div id="loading" data-i18n="quiz_loading">Loading questions...</div>
+            <div id="question-area" style="display: none;">
+                <h3 id="question-text" style="margin-bottom: 20px;">Question?</h3>
+                <div id="options">
+                    <!-- Options injected here -->
+                </div>
+                <button id="next-btn" class="btn" style="margin-top: 20px; width: 100%; display: none;"
+                    data-i18n="quiz_next">Next Question</button>
+            </div>
+            <div id="result-area" style="display: none; text-align: center;">
+                <h3 data-i18n="quiz_completed">Quiz Completed!</h3>
+                <p><span data-i18n="quiz_score">Your Score</span>: <span id="score">0</span> / <span id="total">0</span></p>
+                <div id="awareness-msg" style="margin: 20px 0; font-weight: bold; color: var(--primary-color);"></div>
+                <button onclick="location.reload()" class="btn" data-i18n="btn_retake">Retake Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p data-i18n="footer_rights">© 2026 Welfare India. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+
+</html>

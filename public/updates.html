@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Updates | Welfare India</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <i class="fas fa-landmark"></i> <span data-i18n="nav_logo">Welfare India</span>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+            <li><a href="schemes.html" data-i18n="nav_schemes">Schemes</a></li>
+            <li><a href="updates.html" class="active" data-i18n="nav_updates">Updates</a></li>
+            <li><a href="eligibility.html" data-i18n="nav_eligibility">Check Eligibility</a></li>
+            <li><a href="quiz.html" data-i18n="nav_quiz">Quiz</a></li>
+            <li><a href="contact.html" data-i18n="nav_feedback">Feedback</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2 class="section-title" data-i18n="updates_title">Latest Welfare News &amp; Updates</h2>
+
+        <div id="updates-list" class="grid" style="grid-template-columns: 1fr;">
+            <p style="text-align: center;" data-i18n="updates_loading">Loading updates...</p>
+        </div>
+    </div>
+
+    <footer>
+        <p data-i18n="footer_rights">© 2026 Welfare India. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        function loadUpdates() {
+            const list = document.getElementById('updates-list');
+            list.innerHTML = `<p style="text-align:center;" data-i18n="updates_loading">${t('updates_loading')}</p>`;
+
+            fetch(`${API_BASE_URL}/updates`)
+                .then(res => res.json())
+                .then(data => {
+                    list.innerHTML = '';
+                    if (data.length === 0) {
+                        list.innerHTML = `<p>${t('updates_none')}</p>`;
+                        return;
+                    }
+                    data.forEach(item => {
+                        const div = document.createElement('div');
+                        div.className = 'scheme-card';
+                        div.style.borderTopColor = '#007bff';
+                        div.innerHTML = `
+                            <span class="category">${new Date(item.date).toDateString()}</span>
+                            <h3>${item.title}</h3>
+                            <p>${item.description}</p>
+                        `;
+                        list.appendChild(div);
+                    });
+                })
+                .catch(() => { list.innerHTML = `<p>${t('updates_error')}</p>`; });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadUpdates);
+        // Re-render on language switch (text in dynamically created elements)
+        document.addEventListener('langChange', loadUpdates);
+    </script>
+</body>
+
+</html>

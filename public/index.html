@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welfare Schemes | Know Your Rights</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <i class="fas fa-landmark"></i> <span data-i18n="nav_logo">Welfare India</span>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active"id="id1" data-i18n="nav_home">Home</a></li>
+            <li><a href="schemes.html" data-i18n="nav_schemes">Schemes</a></li>
+            <li><a href="updates.html" data-i18n="nav_updates">Updates</a></li>
+            <li><a href="eligibility.html" data-i18n="nav_eligibility">Check Eligibility</a></li>
+            <li><a href="quiz.html" data-i18n="nav_quiz">Quiz</a></li>
+            <li><a href="contact.html" data-i18n="nav_feedback">Feedback</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1 data-i18n="hero_title">Know Your Rights – Know Your Welfare Schemes</h1>
+        <p data-i18n="hero_subtitle">Empowering citizens with information about government initiatives for Education, Health, Agriculture, and more.</p>
+        <div>
+            <a href="schemes.html" class="btn" data-i18n="btn_browse">Browse Schemes</a>
+            <a href="eligibility.html" class="btn btn-outline" data-i18n="btn_eligibility">Check Eligibility</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title" data-i18n="section_explore">Explore by Category</h2>
+        <div class="grid">
+            <div class="scheme-card" onclick="location.href='schemes.html?category=Education'">
+                <i class="fas fa-graduation-cap fa-3x" style="color: var(--primary-color)"></i>
+                <h3 data-i18n="cat_education">Education</h3>
+                <p data-i18n="cat_education_desc">Scholarships and loans for students.</p>
+            </div>
+            <div class="scheme-card" onclick="location.href='schemes.html?category=Health'">
+                <i class="fas fa-heartbeat fa-3x" style="color: var(--secondary-color)"></i>
+                <h3 data-i18n="cat_health">Health</h3>
+                <p data-i18n="cat_health_desc">Insurance and medical assistance.</p>
+            </div>
+            <div class="scheme-card" onclick="location.href='schemes.html?category=Agriculture'">
+                <i class="fas fa-tractor fa-3x" style="color: #8B4513"></i>
+                <h3 data-i18n="cat_farmers">Farmers</h3>
+                <p data-i18n="cat_farmers_desc">Subsidies and support for agriculture.</p>
+            </div>
+            <div class="scheme-card" onclick="location.href='schemes.html?category=Women'">
+                <i class="fas fa-female fa-3x" style="color: #ff69b4"></i>
+                <h3 data-i18n="cat_women">Women</h3>
+                <p data-i18n="cat_women_desc">Empowerment and child support.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p data-i18n="footer_rights">© 2026 Welfare India. All Rights Reserved.</p>
+        <p data-i18n="footer_initiative">A Public Awareness Initiative.</p>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

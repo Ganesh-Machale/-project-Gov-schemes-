@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Schemes | Welfare India</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <i class="fas fa-landmark"></i> <span data-i18n="nav_logo">Welfare India</span>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+            <li><a href="schemes.html" class="active" data-i18n="nav_schemes">Schemes</a></li>
+            <li><a href="updates.html" data-i18n="nav_updates">Updates</a></li>
+            <li><a href="eligibility.html" data-i18n="nav_eligibility">Check Eligibility</a></li>
+            <li><a href="quiz.html" data-i18n="nav_quiz">Quiz</a></li>
+            <li><a href="contact.html" data-i18n="nav_feedback">Feedback</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2 class="section-title" data-i18n="schemes_title">Government Welfare Schemes</h2>
+
+        <div class="form-group">
+            <input type="text" id="search-bar" class="form-control"
+                data-i18n-placeholder="schemes_search_placeholder"
+                placeholder="Search for schemes (e.g. Housing, Student)...">
+        </div>
+
+        <div id="schemes-list" class="grid">
+            <p style="text-align:center; width:100%;" data-i18n="schemes_loading">Loading schemes...</p>
+        </div>
+    </div>
+
+    <footer>
+        <p data-i18n="footer_rights">© 2026 Welfare India. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/schemes.js"></script>
+</body>
+
+</html>
